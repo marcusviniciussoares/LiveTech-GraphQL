@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  api:
+    container_name: graphQl
+    build:
+      context: .
+      dockerfile: Docker/dev/Dockerfile
+    env_file: .env
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.2
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/mongo:/data/db

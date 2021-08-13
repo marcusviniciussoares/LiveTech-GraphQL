@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  api:
+    ports:
+      - '4010:4010'
+    command: npm run dev
+    volumes:
+      - ./src:/usr/app/src
+      - ./package.json:/usr/app/package.json

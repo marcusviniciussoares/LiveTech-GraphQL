@@ -1,0 +1,38 @@
+scalar DateTime
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Message {
+  id: ID!
+  user: User!
+  message: String!
+  createdAt: DateTime!
+}
+
+input UserInput {
+  name: String!
+  email: String!
+}
+
+input MessageInput {
+  user: ID!
+  message: String!
+}
+
+type Query {
+  users: [User!]!
+  messages: [Message!]!
+}
+
+type Mutation {
+  createUser(data: UserInput!): User!
+  createMessage(data: MessageInput!): Message!
+}
+
+type Subscription {
+  newMessage: Message!
+}

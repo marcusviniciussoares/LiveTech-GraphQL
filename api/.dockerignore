@@ -1,0 +1,10 @@
+/node_modules
+/dist
+
+/Docker
+docker-*
+.dockerignore
+
+.env
+.env.local
+.env.*
